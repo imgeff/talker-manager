@@ -1,16 +1,6 @@
-const { readFile, writeFile } = require('../helpers/fsJSON');
+const speakersListEdit = require('../helpers/speakersListEdit');
 const tokenValidation = require('../helpers/tokenValidation');
 const talkerValidation = require('../helpers/talkerValidation');
-
-function speakersListEdit(name, age, id, talk) {
-  const listSpeakers = readFile('talker.json', true);
-  const oldSpeaker = listSpeakers.find((speaker) => speaker.id === Number(id));
-  const indexSpeaker = listSpeakers.indexOf(oldSpeaker);
-  const newSpeaker = { age, id, name, talk };
-  listSpeakers[indexSpeaker] = newSpeaker;
-  writeFile('talker.json', listSpeakers, true);
-  return newSpeaker;
-}
 
 const editTalker = (req, res) => {
   // Constantes
