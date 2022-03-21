@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const getTalkers = require('./middlewares/getTalkers');
 const getTalkerById = require('./middlewares/getTalkerById');
+const tokenValidation = require('./middlewares/tokenValidation');
 const searchTalker = require('./middlewares/searchTalker');
 const createTalker = require('./middlewares/createTalker');
 const editTalker = require('./middlewares/editTalker');
@@ -21,17 +22,17 @@ app.get('/', (_request, response) => {
 
 app.get('/talker', getTalkers);
 
-app.get('/talker/search', searchTalker);
+app.get('/talker/search', tokenValidation, searchTalker);
 
 app.get('/talker/:id', getTalkerById);
 
-app.post('/talker', createTalker);
+app.post('/talker', tokenValidation, createTalker);
 
 app.post('/login', login);
 
-app.put('/talker/:id', editTalker);
+app.put('/talker/:id', tokenValidation, editTalker);
 
-app.delete('/talker/:id', deleteTalker);
+app.delete('/talker/:id', tokenValidation, deleteTalker);
 
 app.listen(PORT, () => {
   console.log('Online');
