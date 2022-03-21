@@ -1,14 +1,6 @@
-const { readFile, writeFile } = require('../helpers/fsJSON');
+const addTalker = require('../helpers/addTalker');
 const tokenValidation = require('../helpers/tokenValidation');
 const talkerValidation = require('../helpers/talkerValidation');
-
-function addTalker({ name, age, talk }) {
-  const listSpeakers = readFile('talker.json', true);
-  const newTalker = { name, age, id: listSpeakers.length + 1, talk };
-  listSpeakers.push(newTalker);
-  writeFile('talker.json', listSpeakers, true);
-  return newTalker;
-} 
 
 const createTalker = (req, res) => {
   const { authorization } = req.headers;
