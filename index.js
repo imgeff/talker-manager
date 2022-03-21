@@ -21,9 +21,9 @@ app.get('/', (_request, response) => {
 
 app.get('/talker', getTalkers);
 
-app.get('/talker/:id', getTalkerById);
-
 app.get('/talker/search', searchTalker);
+
+app.get('/talker/:id', getTalkerById);
 
 app.post('/talker', createTalker);
 
