@@ -1,8 +1,7 @@
-const fs = require('fs').promises;
+const { readFile } = require('../helpers/fsJSON');
 
 const SpeakingPeople = async (_req, res) => {
-  const speakersJSON = await fs.readFile('talker.json', 'utf-8');
-  const listSpeakers = JSON.parse(speakersJSON);
+  const listSpeakers = readFile('talker.json', true);
 
   if (listSpeakers.length === 0) {
     return res.status(200).json([]);
