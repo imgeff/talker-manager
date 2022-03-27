@@ -35,6 +35,10 @@ Os maiores desafios  que enfrentei nesse projeto estavam relacionadas as validaÃ
 2. Instale as dependÃªncias
 
 - `npm install`
+- 
+3. Inicialize o servidor
+
+- `npm start`
 
 # Requisitos do projeto
 
