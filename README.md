@@ -40,7 +40,6 @@ Os maiores desafios  que enfrentei nesse projeto estavam relacionadas as valida�
 
 - `npm start`
 
-# Requisitos do projeto
 
 ### Linter
 
@@ -52,7 +51,7 @@ Para poder rodar o `ESLint` em um projeto basta executar o comando `npm install`
 
 Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em extensions e baixar o [plugin `ESLint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 
-## Lista de requisitos
+## Endpoints
 
 ### 1 - Endpoint GET `/talker`
 
